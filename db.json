@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "reg_name": "somukumar E",
+      "reg_email": "somu.career2420@gmail.com",
+      "gender": "Male",
+      "reg_phno": "8668054236",
+      "reg_pwd": "somu"
+    },
+    {
+      "id": 2,
+      "reg_name": "rajai",
+      "reg_email": "raja2420@gmail.com",
+      "gender": "Male",
+      "reg_phno": "1234567890",
+      "reg_pwd": "raja"
+    },
+    {
+      "id": 3,
+      "reg_name": "rani",
+      "reg_email": "rani123@gmail.cpm",
+      "gender": "Female",
+      "reg_phno": "9807543513",
+      "reg_pwd": "rani"
+    },
+    {
+      "id": 4,
+      "reg_name": "rajii",
+      "reg_email": "raji2420@gmail.com",
+      "gender": "Female",
+      "reg_phno": "25673234234",
+      "reg_pwd": "12345"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

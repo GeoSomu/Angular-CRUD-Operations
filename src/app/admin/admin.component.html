@@ -1,0 +1,42 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1><b>Administrator Login</b></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <form #AdminForm="ngForm" autocomplete="off">
+        <div class="form-group">
+          <label for="email">Email Id:</label>
+          <input type="email" class="form-control"
+            name="admin_email" #admin_email="ngModel"
+            [class.is-invalid]="admin_email.invalid && admin_email.touched"
+            [(ngModel)]="adminModel.admin_email" required>
+            <small [class.d-none]="admin_email.valid || admin_email.untouched"
+              class="text-danger"
+            >Email is required!!!</small>
+
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control"
+            name="admin_pwd" #admin_pwd="ngModel"
+            [class.is-invalid]="admin_pwd.invalid && admin_pwd.touched"
+            [(ngModel)]="adminModel.admin_pwd" required>
+            <small [class.d-none]="admin_pwd.valid || admin_pwd.untouched"
+              class="text-danger"
+            >Password is required!!!</small>
+
+        </div>
+        <div class="form-group">
+          <button
+            [disabled]="AdminForm.form.invalid"
+            (click)="onAdminClicked()"
+            class="btn btn-primary">Sign In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

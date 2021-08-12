@@ -1,0 +1,32 @@
+<div class="text-center mt-3">
+  <button class="btn btn-success" (click)="onLogout()">Logout</button>
+</div>
+<br>
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">User ID</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email ID</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Mobile NO</th>
+      <th scope="col">Password</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let row of userDetails">
+      <td> {{ row.id }} </td>
+      <td> {{ row.reg_name }} </td>
+      <td> {{ row.reg_email }} </td>
+      <td> {{ row.gender }} </td>
+      <td> {{ row.reg_phno }} </td>
+      <td> {{ row.reg_pwd }} </td>
+      <td>
+        <button class="btn btn-danger"
+          type="button" (click)="onDeleteUserDetails(row)"
+        >Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

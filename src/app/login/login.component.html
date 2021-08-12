@@ -1,0 +1,28 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1><b>User Login</b></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <form #loginForm="ngForm" autocomplete="off">
+        <div class="form-group">
+          <label for="email">Email Id:</label>
+          <input type="email" class="form-control" name="log_email" [(ngModel)]="log_email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" name="log_pwd" [(ngModel)]="log_pwd" required>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" (click)="onLogin()">Sign In</button>
+        </div>
+        <div class="form-group">
+          <a routerLink="/registration">Create New Account</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
