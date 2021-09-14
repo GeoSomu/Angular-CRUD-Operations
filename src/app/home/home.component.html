@@ -10,7 +10,7 @@
       <p><b>Username : {{ userDetail.reg_name }}</b></p>
       <p><b>Email Id : {{ userDetail.reg_email }}</b></p>
       <p><b>Gender   : {{ userDetail.gender }}</b></p>
-      <p><b>Phone No : {{ userDetail.reg_phno }}</b></p>
+      <p><b>Phone No : {{ userDetail.reg_phno | mobileFormat }}</b></p>
       <p><b>Password : {{ userDetail.reg_pwd }}</b></p>
     </div>
   </div><br>
@@ -64,5 +64,3 @@
     </div>
   </div>
 </div>
-
-

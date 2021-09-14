@@ -14,6 +14,8 @@ export class RegistrationComponent implements OnInit {
   userFormValue !: FormGroup;
   userDetailObj!: Usermodel;
 
+  country_codeArray = [{'USA':'+1'}, {'India': '+91'}]
+
   constructor(private formBuilder: FormBuilder,
     private api: ApiService,
     private router: Router) { }
@@ -38,7 +40,7 @@ export class RegistrationComponent implements OnInit {
       reg_phno : this.userFormValue.value.reg_phno,
       reg_pwd : this.userFormValue.value.reg_pwd
     };
-    console.log(this.userDetailObj);
+    // console.log(this.userDetailObj);
     this.api.postUserModel(this.userDetailObj)
     .subscribe(res => {
       console.log(res);

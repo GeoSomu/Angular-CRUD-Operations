@@ -10,6 +10,8 @@ import { Usermodel } from '../usermodel.model';
 })
 export class AdminpageComponent implements OnInit {
 
+  username: any;
+
   constructor(private api: ApiService, private router: Router) {   }
 
   userDetails:Usermodel[]= [];
@@ -32,5 +34,23 @@ export class AdminpageComponent implements OnInit {
 
   onLogout() {
     this.router.navigate(['/admin']);
+  }
+
+  onSearch() {
+    if(this.username == "") {
+      this.ngOnInit();
+    }
+    else {
+      this.userDetails = this.userDetails.filter(res => {
+        return res.reg_name.toLocaleLowerCase().match(this.username.toLocaleLowerCase());
+      })
+    }
+  }
+
+  key: string = 'id';
+  reverse : boolean = false;
+  onSort(key: any){
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 }

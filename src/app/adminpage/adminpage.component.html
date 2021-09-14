@@ -2,10 +2,18 @@
   <button class="btn btn-success" (click)="onLogout()">Logout</button>
 </div>
 <br>
+<div class="main">
+  <div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input type="text" class="form-control" placeholder="Search by Username"
+    name="username" [(ngModel)]="username"
+    (ngModelChange)="onSearch()">
+  </div>
+</div>
 <table class="table mt-3">
   <thead>
     <tr>
-      <th scope="col">User ID</th>
+      <th scope="col" (click)="onSort('id')">User ID&nbsp;<i class="fa fa-sort"></i></th>
       <th scope="col">Username</th>
       <th scope="col">Email ID</th>
       <th scope="col">Gender</th>
@@ -15,12 +23,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor = "let row of userDetails">
-      <td> {{ row.id }} </td>
+    <tr *ngFor = "let row of userDetails | orderBy : key: reverse">
+      <td > {{ row.id }}  </td>
       <td> {{ row.reg_name }} </td>
       <td> {{ row.reg_email }} </td>
       <td> {{ row.gender }} </td>
-      <td> {{ row.reg_phno }} </td>
+      <td> {{ row.reg_phno  | mobileFormat }} </td>
       <td> {{ row.reg_pwd }} </td>
       <td>
         <button class="btn btn-danger"
